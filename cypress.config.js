@@ -5,7 +5,8 @@ module.exports = defineConfig({
     // setupNodeEvents(on, config) {
     //   // implement node event listeners here
     // },
-    baseUrl:"https://pokeapi.co/api/v2",
+   // baseUrl:"https://pokeapi.co/api/v2",
+    baseUrl:"https://reqres.in/api/",
     specPattern: 'cypress/e2e/**/*.ts', 
   },
 });
