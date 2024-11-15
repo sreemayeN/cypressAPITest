@@ -2,7 +2,7 @@ describe('REQRESAPI Tests', () => {
     it('Put request', () => {
       const filePath = 'cypress/downloads/response.json';
           cy.request({method: 'PUT',
-        url:'baseUrl/2', 
+           url:'baseUrl/2', 
          headers: {'Content-Type': 'application/json' // Set the Content-Type header
       },   
        body: {
@@ -31,7 +31,6 @@ describe('REQRESAPI Tests', () => {
       };
       
       cy.request({method: 'GET',
-       // url:'https://reqres.in/api/users', 
         url:apiUrl,
         qs: queryParams,
           
@@ -49,13 +48,7 @@ describe('REQRESAPI Tests', () => {
         const filePath = 'cypress/downloads/response1.json';
         expect(response.status).to.eq(200);
         cy.writeFile(filePath, response.body);
-        //expect(response.body).to.have.property('name', 'cheri');
-        //expect(response.body).to.have.property('id', 1);
-        //expect(response.body.flavors[0]).to.have.property('potency', 10);
-        //expect(response.body.flavors[0].flavor).to.have.property('name', 'spicy');
-        //expect(response.body.firmness).to.have.property('name', 'soft');
       });
-      
     });
       
   }); 
