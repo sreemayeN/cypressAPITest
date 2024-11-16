@@ -23,32 +23,20 @@ describe('REQRESAPI Tests', () => {
       });
     });
     it('Get request', () => {
-      const filePath = 'cypress/downloads/response.json';
+      const filePath = 'cypress/downloads/response1.json';
       const apiUrl = 'https://reqres.in/api/users'
       const queryParams = {
         page: '1',
         per_page: '12',
       };
-      
+    
       cy.request({method: 'GET',
         url:apiUrl,
         qs: queryParams,
-          
-     
-     }) .then((response) => {
+     }).then((response) => {
         expect(response.status).to.eq(200);
         expect(response.body).to.not.be.null;
         cy.writeFile(filePath, response.body);
       });
     });
-
-    it('GET request for reqres', () => {
-      
-      cy.request("GET", "users/").then((response) => {
-        const filePath = 'cypress/downloads/response1.json';
-        expect(response.status).to.eq(200);
-        cy.writeFile(filePath, response.body);
-      });
-    });
-      
-  }); 
+}); 
